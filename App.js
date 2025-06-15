@@ -1,8 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import animeData from "./animeData.json";
 
 function App() {
   const [search, setSearch] = useState("");
+  const [watchlist, setWatchlist] = useState([]);
+
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("watchlist")) || [];
+    setWatchlist(saved);
+  }, []);
+
+  const toggleWatchlist = (anime) => {
+    let updated = [...watchlist];
+    const exists = updated.find((item) => item.title === anime.title);
+    if (exists) {
+      updated = updated.filter((item) => item.title !== anime.title);
+    } else {
+      updated.push(anime);
+    }
+    setWatchlist(updated);
+    localStorage.setItem("watchlist", JSON.stringify(updated));
+  };
 
   const filteredAnime = animeData.filter(anime =>
     anime.title.toLowerCase().includes(search.toLowerCase())
@@ -45,6 +63,21 @@ function App() {
             <img src={anime.image} alt={anime.title} style={{ width: "100%", borderRadius: "8px" }} />
             <h3>{anime.title}</h3>
             <p>{anime.description}</p>
+
+            <button
+              onClick={() => toggleWatchlist(anime)}
+              style={{
+                backgroundColor: watchlist.find(a => a.title === anime.title) ? "#c0392b" : "#2980b9",
+                color: "white",
+                border: "none",
+                padding: "8px",
+                borderRadius: "5px",
+                cursor: "pointer",
+                marginTop: "10px"
+              }}
+            >
+              {watchlist.find(a => a.title === anime.title) ? "Remove from Watchlist" : "➕ Add to Watchlist"}
+            </button>
           </div>
         ))}
       </div>
