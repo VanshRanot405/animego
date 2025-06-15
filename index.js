@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration'; // ✅ only once
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(
+  document.getElementById('root')
+);
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
 
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-// ...your existing imports and ReactDOM.render
-
+// ✅ Register the service worker (PWA support)
 serviceWorkerRegistration.register();
