@@ -1,9 +1,22 @@
 [
   {
-    "id": "1",
     "title": "Naruto",
     "description": "A young ninja who seeks recognition.",
-    "image": "https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg",
-    "watchLink": "https://www.crunchyroll.com/series/GYEXQKJG6/naruto"
+    "image": "https://link-to-image.jpg",
+    "links": {
+      "Crunchyroll": "https://www.crunchyroll.com/series/GR19V7816/naruto",
+      "Netflix": "https://www.netflix.com/title/70205012",
+      "Zoro": "https://zoro.to/watch/naruto-677"
+    }
+  },
+  {
+    "title": "Demon Slayer",
+    "description": "A boy becomes a demon slayer to save his sister.",
+    "image": "https://link.jpg",
+    "links": {
+      "Crunchyroll": "https://www.crunchyroll.com/series/GY5P48XEY/demon-slayer",
+      "Netflix": "https://www.netflix.com/title/81091393",
+      "Zoro": "https://zoro.to/watch/kimetsu-no-yaiba-47"
+    }
   }
 ]
