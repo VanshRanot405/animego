@@ -1,22 +1,26 @@
 [
   {
-    "title": "Naruto",
-    "description": "A young ninja who seeks recognition.",
-    "image": "https://link-to-image.jpg",
-    "links": {
-      "Crunchyroll": "https://www.crunchyroll.com/series/GR19V7816/naruto",
-      "Netflix": "https://www.netflix.com/title/70205012",
-      "Zoro": "https://zoro.to/watch/naruto-677"
+    "id": 1,
+    "title": "Jujutsu Kaisen",
+    "rating": 8.9,
+    "episodes": 24,
+    "cover": "https://example.com/jujutsu.jpg",
+    "trailer": "https://youtube.com/jujutsu-trailer",
+    "watchLinks": {
+      "Crunchyroll": "https://www.crunchyroll.com/jujutsu-kaisen",
+      "Netflix": "https://www.netflix.com/title/81448990"
     }
   },
   {
-    "title": "Demon Slayer",
-    "description": "A boy becomes a demon slayer to save his sister.",
-    "image": "https://link.jpg",
-    "links": {
-      "Crunchyroll": "https://www.crunchyroll.com/series/GY5P48XEY/demon-slayer",
-      "Netflix": "https://www.netflix.com/title/81091393",
-      "Zoro": "https://zoro.to/watch/kimetsu-no-yaiba-47"
+    "id": 2,
+    "title": "Attack on Titan",
+    "rating": 9.1,
+    "episodes": 87,
+    "cover": "https://example.com/aot.jpg",
+    "trailer": "https://youtube.com/aot-trailer",
+    "watchLinks": {
+      "Crunchyroll": "https://www.crunchyroll.com/attack-on-titan",
+      "Netflix": "https://www.netflix.com/title/70299043"
     }
   }
 ]
