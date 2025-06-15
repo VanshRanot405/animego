@@ -64,6 +64,31 @@ function App() {
             <h3>{anime.title}</h3>
             <p>{anime.description}</p>
 
+            {anime.links && (
+              <div style={{ marginTop: "10px" }}>
+                {Object.entries(anime.links).map(([platform, url]) => (
+                  <a
+                    key={platform}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "inline-block",
+                      margin: "5px",
+                      backgroundColor: "#27ae60",
+                      color: "white",
+                      padding: "6px 10px",
+                      borderRadius: "6px",
+                      textDecoration: "none",
+                      fontSize: "14px"
+                    }}
+                  >
+                    ▶️ {platform}
+                  </a>
+                ))}
+              </div>
+            )}
+
             <button
               onClick={() => toggleWatchlist(anime)}
               style={{
