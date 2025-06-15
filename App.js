@@ -1,44 +1,16 @@
-import React, { useState } from 'react';
-import './App.css';
-import { auth, provider } from './firebase';
-import { signInWithPopup } from 'firebase/auth';
-import animeData from './animeData.json';
+import React from "react";
+import animeData from "./animeData.json";
 
 function App() {
-  const [user, setUser] = useState(null);
-  const [search, setSearch] = useState('');
-
-  const signIn = () => {
-    signInWithPopup(auth, provider).then((result) => {
-      setUser(result.user);
-    });
-  };
-
-  const filteredAnime = animeData.filter(a =>
-    a.title.toLowerCase().includes(search.toLowerCase())
-  );
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>AnimeGo</h1>
-        {!user && <button onClick={signIn}>Sign in with Google</button>}
-        {user && <p>Welcome, {user.displayName}</p>}
-        <input
-          type="text"
-          placeholder="Search anime (e.g. Naruto)"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </header>
-
-      <div className="anime-list">
-        {filteredAnime.map((anime) => (
-          <div className="anime-card" key={anime.id}>
-            <img src={anime.image} alt={anime.title} />
-            <h2>{anime.title}</h2>
+    <div style={{ padding: "20px", fontFamily: "Arial", backgroundColor: "#111", color: "white" }}>
+      <h1 style={{ textAlign: "center" }}>AnimeGo</h1>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "20px", marginTop: "20px" }}>
+        {animeData.map((anime, index) => (
+          <div key={index} style={{ backgroundColor: "#1c1c1c", borderRadius: "10px", padding: "10px", textAlign: "center", boxShadow: "0 4px 8px rgba(0,0,0,0.3)" }}>
+            <img src={anime.image} alt={anime.title} style={{ width: "100%", borderRadius: "8px" }} />
+            <h3>{anime.title}</h3>
             <p>{anime.description}</p>
-            <a href={anime.watchLink} target="_blank" rel="noopener noreferrer">Watch</a>
           </div>
         ))}
       </div>
