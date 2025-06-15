@@ -11,4 +11,7 @@ root.render(
   </React.StrictMode>
 );
 
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+// ...your existing imports and ReactDOM.render
+
 serviceWorkerRegistration.register();
